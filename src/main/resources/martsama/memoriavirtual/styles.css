@@ -1,0 +1,14 @@
+.custom-label {
+
+    -fx-border-color: black; /* Border color */
+    -fx-border-width: 0 0 1px 0; /* Border width */
+    -fx-font-family: Monospaced;
+    -fx-padding: 5px; /* Padding */
+    -fx-background-color: gray;
+}
+
+.border{
+-fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-padding: 5px; /* Padding */
+}
