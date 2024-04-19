@@ -23,7 +23,7 @@
 
     <HBox GridPane.columnIndex="0" fx:id="container1"   spacing="20"  style="-fx-background-color: red; -fx-padding: 10px;" alignment="TOP_CENTER" HBox.hgrow="ALWAYS" >
 
-        <Button onAction="#onHelloButtonClick">Click</Button>
+        <Button onAction="#start">Click</Button>
         <VBox fx:id="proc" styleClass="border" alignment="TOP_CENTER">
 
             <Label styleClass="custom-label">Proceso 1</Label>
@@ -53,7 +53,7 @@
         </VBox>
     </HBox>
     <VBox GridPane.columnIndex="1" fx:id="container2" styleClass="border" alignment="TOP_CENTER" style="-fx-background-color: green; -fx-padding: 10px;">
-       <FlowPane hgap="5" vgap="5" VBox.vgrow="ALWAYS">
+       <FlowPane hgap="5" vgap="5" VBox.vgrow="ALWAYS" fx:id="virtual">
            <Label styleClass="custom-label">Proceso 1</Label>
            <Label styleClass="custom-label">Proceso 2</Label>
            <Label styleClass="custom-label">Proceso 3</Label>
