@@ -131,11 +131,11 @@ public class HelloController {
                 new KeyFrame(Duration.seconds(2), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0.80);")), // light green
 //                new KeyFrame(Duration.seconds(3), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0.70);")), // lighter green
 //                new KeyFrame(Duration.seconds(4), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 60);")), // fully transparent
-                new KeyFrame(Duration.seconds(5), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 50);")),// fully transparent
+                new KeyFrame(Duration.seconds(3), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 50);")),// fully transparent
 //                new KeyFrame(Duration.seconds(6), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 40);")), // fully transparent
 //                new KeyFrame(Duration.seconds(7), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 30);")), // fully transparent
-                new KeyFrame(Duration.seconds(8), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 20);")), // fully transparent
-                new KeyFrame(Duration.seconds(9), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0);"))// fully transparent
+                new KeyFrame(Duration.seconds(4), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 20);")), // fully transparent
+                new KeyFrame(Duration.seconds(5), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0);"))// fully transparent
         );
         timeline.setCycleCount(1);
         timeline.play();
@@ -181,14 +181,36 @@ public class HelloController {
                     //Crear logica para animaciones
                     new Thread(()->{
                         try{
-                            for(int i=0; i<9; i++){
-                                entradaSalidaAnimation(proc.getChildren().get(i));
-//                                Thread.sleep(10000);
-                                Thread.sleep(1000);
-                            }
+                            entradaSalida();
+                            Thread.sleep(45000);
                             removeNode(6,9, ram, virtual, true);
                             Thread.sleep(3000);
+                            moveElements(0,3,ram,virtual, false);
+                            Thread.sleep(3000);
                             duplicateElements(6,9, cache);
+                            Thread.sleep(3000);
+                            entradaSalida();
+                            Thread.sleep(45000);
+                            removeNode(6,9, cache, virtual, true);
+                            Thread.sleep(3000);
+                            duplicateElements(6,9, ram);
+                            entradaSalida();
+                            Thread.sleep(3000);
+                            moveElements(0,3,cache,virtual,false);
+                            Thread.sleep(45000);
+                            removeNode(6,9, ram,virtual, true);
+                           Thread.sleep(3000);
+                           duplicateElements(6,9,cache);
+                           Thread.sleep(3000);
+                           entradaSalida();
+                           Thread.sleep(3000);
+                           moveElements(0,3,ram,virtual, false);
+                            Thread.sleep(45000);
+                            removeNode(6,9,cache, virtual,true);
+                            Thread.sleep(3000);
+                            duplicateElements(6,9, ram);
+                            Thread.sleep(3000);
+                            entradaSalida();
                         }catch(Exception e){
                             e.printStackTrace();
                         }
@@ -205,6 +227,20 @@ public class HelloController {
         }).start();
     }
 
+    protected void entradaSalida(){
+        new Thread(()->{
+            try{
+                for(int i=0; i<9; i++){
+                    entradaSalidaAnimation(proc.getChildren().get(i));
+//                                Thread.sleep(10000);
+                    Thread.sleep(6000);
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
+        }).start();
+    }
     public void removeNode(int inicio, int end, Pane origin, Pane destination, boolean imaginary){
         List<Node> nodesToRemove = new ArrayList<>();
        for (int i = inicio; i< end; i++ ){
