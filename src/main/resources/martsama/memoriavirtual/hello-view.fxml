@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 
 <GridPane hgap="10" xmlns:fx="http://javafx.com/fxml"
-          fx:controller="martsama.memoriavirtual.HelloController" style="-fx-background-color: lightblue;" stylesheets="@styles.css">
+          fx:controller="martsama.memoriavirtual.HelloController" style="-fx-background-color: #edf2fb;" stylesheets="@styles.css">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
@@ -21,38 +21,48 @@
         <ColumnConstraints percentWidth="25"/>
     </columnConstraints>
 
-    <HBox GridPane.columnIndex="0" fx:id="container1"   spacing="20"  style="-fx-background-color: red; -fx-padding: 10px;" alignment="TOP_CENTER" HBox.hgrow="ALWAYS" >
+    <HBox GridPane.columnIndex="0" fx:id="container1"   spacing="20"  style="-fx-background-color: #d7e3fc; -fx-padding: 10px;" alignment="TOP_CENTER" HBox.hgrow="ALWAYS" >
 
         <Button onAction="#start">Click</Button>
-        <VBox fx:id="proc" styleClass="border" alignment="TOP_CENTER">
+        <VBox alignment="TOP_CENTER">
+           <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Procesador</Label>
+            <VBox fx:id="proc" styleClass="border" alignment="TOP_CENTER">
 
-            <Label styleClass="custom-label">Proceso 1</Label>
-            <Label styleClass="custom-label">Proceso 2</Label>
-            <Label styleClass="custom-label">Proceso 3</Label>
-            <Label styleClass="custom-label">Proceso 4</Label>
-            <Label styleClass="custom-label">Proceso 5</Label>
-            <Label styleClass="custom-label">Proceso 6</Label>
+                <Label styleClass="custom-label">Proceso 1</Label>
+                <Label styleClass="custom-label">Proceso 2</Label>
+                <Label styleClass="custom-label">Proceso 3</Label>
+                <Label styleClass="custom-label">Proceso 4</Label>
+                <Label styleClass="custom-label">Proceso 5</Label>
+                <Label styleClass="custom-label">Proceso 6</Label>
+            </VBox>
         </VBox>
-        <VBox fx:id="ram" styleClass="border" alignment="TOP_CENTER" >
-            <Label styleClass="custom-label">Proceso 1</Label>
-            <Label styleClass="custom-label">Proceso 2</Label>
-            <Label styleClass="custom-label">Proceso 3</Label>
-            <Label styleClass="custom-label">Proceso 4</Label>
-            <Label styleClass="custom-label">Proceso 5</Label>
-            <Label styleClass="custom-label">Proceso 6</Label>
+        <VBox alignment="TOP_CENTER">
+        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria RAM</Label>
+            <VBox fx:id="ram" styleClass="border" alignment="TOP_CENTER" >
+                <Label styleClass="custom-label">Proceso 1</Label>
+                <Label styleClass="custom-label">Proceso 2</Label>
+                <Label styleClass="custom-label">Proceso 3</Label>
+                <Label styleClass="custom-label">Proceso 4</Label>
+                <Label styleClass="custom-label">Proceso 5</Label>
+                <Label styleClass="custom-label">Proceso 6</Label>
 
+            </VBox>
         </VBox>
-        <VBox fx:id="cache" styleClass="border" alignment="TOP_CENTER">
-            <Label styleClass="custom-label">Proceso 1</Label>
-            <Label styleClass="custom-label">Proceso 2</Label>
-            <Label styleClass="custom-label">Proceso 3</Label>
-            <Label styleClass="custom-label">Proceso 4</Label>
-            <Label styleClass="custom-label">Proceso 5</Label>
-            <Label styleClass="custom-label">Proceso 6</Label>
+        <VBox alignment="TOP_CENTER">
+        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria Cache</Label>
+            <VBox fx:id="cache" styleClass="border" alignment="TOP_CENTER">
+                <Label styleClass="custom-label">Proceso 1</Label>
+                <Label styleClass="custom-label">Proceso 2</Label>
+                <Label styleClass="custom-label">Proceso 3</Label>
+                <Label styleClass="custom-label">Proceso 4</Label>
+                <Label styleClass="custom-label">Proceso 5</Label>
+                <Label styleClass="custom-label">Proceso 6</Label>
 
+            </VBox>
         </VBox>
     </HBox>
-    <VBox GridPane.columnIndex="1" fx:id="container2" styleClass="border" alignment="TOP_CENTER" style="-fx-background-color: green; -fx-padding: 10px;">
+    <VBox GridPane.columnIndex="1" fx:id="container2" styleClass="border" alignment="TOP_CENTER" style="-fx-background-color: #ff7477; -fx-padding: 10px;">
+        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria Virtual</Label>
        <FlowPane hgap="5" vgap="5" VBox.vgrow="ALWAYS" fx:id="virtual">
            <Label styleClass="custom-label">Proceso 1</Label>
            <Label styleClass="custom-label">Proceso 2</Label>

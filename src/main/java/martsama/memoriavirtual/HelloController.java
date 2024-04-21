@@ -60,12 +60,12 @@ public class HelloController {
 
     protected void bigAnimation(Node label){
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
-        label.setStyle("-fx-background-color: white");
+        label.setStyle("-fx-background-color: white; -fx-border-radius: 20px");
         label.setScaleX(2);
         label.setScaleY(2);
         transition.play();
         transition.setOnFinished(event -> {
-            label.setStyle("-fx-background-color: black");
+            label.setStyle("-fx-background-color: #ff70a6");
             label.setScaleX(1);
             label.setScaleY(1);
         });
@@ -81,37 +81,38 @@ public class HelloController {
             label0.setFont(((Label) label).getFont());
             TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
             TranslateTransition transition2 = new TranslateTransition(Duration.seconds(1), label0);
-            label.setStyle("-fx-background-color: white");
-            label.setScaleX(2);
-            label.setScaleY(2);
+
+            label.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px");
+            label.setScaleX(1.4);
+            label.setScaleY(1.4);
             transition.play();
-            label0.setStyle("-fx-background-color: white");
-            label0.setScaleX(2);
-            label0.setScaleY(2);
+            label0.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px");
+            label0.setScaleX(1.4);
+            label0.setScaleY(1.4);
             transition2.play();
             transition.setOnFinished(event -> {
                 destination.getChildren().add(label);
 
-                label.setStyle("-fx-background-color: black");
+                label.setStyle("-fx-background-color: #70d6ff");
                 label.setScaleX(1);
                 label.setScaleY(1);
             });
             transition2.setOnFinished(event -> {
                 proc.getChildren().add(label0);
 
-                label0.setStyle("-fx-background-color: black");
+                label0.setStyle("-fx-background-color: #70d6ff");
                 label0.setScaleX(1);
                 label0.setScaleY(1);
             });
         }else{
             TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
-            label.setStyle("-fx-background-color: white");
-            label.setScaleX(2);
-            label.setScaleY(2);
+            label.setStyle("-fx-background-color: #70d6ff; -fx-border-radius: 10px");
+            label.setScaleX(1.4);
+            label.setScaleY(1.4);
             transition.play();
             transition.setOnFinished(event -> {
                 destination.getChildren().add(label);
-                label.setStyle("-fx-background-color: black");
+                label.setStyle("-fx-background-color: #70d6ff");
                 label.setScaleX(1);
                 label.setScaleY(1);
             });
@@ -126,16 +127,12 @@ public class HelloController {
     }
     protected void entradaSalidaAnimation(Node label){
         Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(0), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 1);")), // deep green
-                new KeyFrame(Duration.seconds(1), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0.90);")), // medium green
-                new KeyFrame(Duration.seconds(2), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0.80);")), // light green
-//                new KeyFrame(Duration.seconds(3), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0.70);")), // lighter green
-//                new KeyFrame(Duration.seconds(4), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 60);")), // fully transparent
-                new KeyFrame(Duration.seconds(3), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 50);")),// fully transparent
-//                new KeyFrame(Duration.seconds(6), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 40);")), // fully transparent
-//                new KeyFrame(Duration.seconds(7), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 30);")), // fully transparent
-                new KeyFrame(Duration.seconds(4), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 20);")), // fully transparent
-                new KeyFrame(Duration.seconds(5), event -> label.setStyle("-fx-background-color: rgba(0, 51, 0, 0);"))// fully transparent
+        new KeyFrame(Duration.seconds(0), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 1);")), // deep purple
+                new KeyFrame(Duration.seconds(1), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 0.80);")), // medium purple
+                new KeyFrame(Duration.seconds(2), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 0.60);")), // light purple
+                new KeyFrame(Duration.seconds(3), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 0.40);")), // semi-transparent
+                new KeyFrame(Duration.seconds(4), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 0.20);")), // semi-transparent
+                new KeyFrame(Duration.seconds(5), event -> label.setStyle("-fx-background-color: rgba(68,97, 71, 0);")) // fully transparent
         );
         timeline.setCycleCount(1);
         timeline.play();
