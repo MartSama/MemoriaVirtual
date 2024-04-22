@@ -43,15 +43,16 @@ public class HelloController {
             label0.setFont(((Label) label).getFont());
             TranslateTransition transition2 = new TranslateTransition(Duration.seconds(1), label0);
 
-            label0.setStyle("-fx-background-color: white");
+            label0.setStyle("-fx-background-color: #adf7b6; -fx-border-radius: 10px; -fx-border-color: black; -fx-border-width: 2px");
             label0.setScaleX(2);
             label0.setScaleY(2);
             transition2.play();
 
             transition2.setOnFinished(event -> {
                 proc.getChildren().add(label0);
-
-                label0.setStyle("-fx-background-color: black");
+                //Quitar este en caso necesario
+                label.setStyle("-fx-background-color: rgba(0,0,0,.60)");
+                label0.setStyle("-fx-background-color: rgba(0,0,0, .60)");
                 label0.setScaleX(1);
                 label0.setScaleY(1);
             });
@@ -60,7 +61,7 @@ public class HelloController {
 
     protected void bigAnimation(Node label){
         TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
-        label.setStyle("-fx-background-color: white; -fx-border-radius: 20px");
+        label.setStyle("-fx-background-color: #6e78ff; -fx-border-radius: 10px; -fx-border-color: black; -fx-border-width: 2px");
         label.setScaleX(2);
         label.setScaleY(2);
         transition.play();
@@ -82,11 +83,11 @@ public class HelloController {
             TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
             TranslateTransition transition2 = new TranslateTransition(Duration.seconds(1), label0);
 
-            label.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px");
+            label.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px; -fx-border-color: black; -fx-border-width: 2px");
             label.setScaleX(1.4);
             label.setScaleY(1.4);
             transition.play();
-            label0.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px");
+            label0.setStyle("-fx-background-color: #ff9770; -fx-border-radius: 10px; -fx-border-color: black; -fx-border-width: 2px");
             label0.setScaleX(1.4);
             label0.setScaleY(1.4);
             transition2.play();
@@ -106,7 +107,7 @@ public class HelloController {
             });
         }else{
             TranslateTransition transition = new TranslateTransition(Duration.seconds(1), label);
-            label.setStyle("-fx-background-color: #70d6ff; -fx-border-radius: 10px");
+            label.setStyle("-fx-background-color: #70d6ff; -fx-border-radius: 10px; -fx-border-color: black; -fx-border-width: 2px");
             label.setScaleX(1.4);
             label.setScaleY(1.4);
             transition.play();
