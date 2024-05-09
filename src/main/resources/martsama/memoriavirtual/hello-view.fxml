@@ -9,76 +9,87 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
-
+<!--Creamos el contenedor general para nuestra ventana-->
 <GridPane hgap="10" xmlns:fx="http://javafx.com/fxml"
           fx:controller="martsama.memoriavirtual.HelloController" style="-fx-background-color: #edf2fb;" stylesheets="@styles.css">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-
+<!--    definimos los tamanos de cada parte del contedor-->
     <columnConstraints>
        <ColumnConstraints percentWidth="75"/>
         <ColumnConstraints percentWidth="25"/>
     </columnConstraints>
 
+<!--    Parte izquierda de nuestra pantalla, contiene el procesador, la cache y la ram-->
     <HBox GridPane.columnIndex="0" fx:id="container1"   spacing="20"  style="-fx-background-color: #d7e3fc; -fx-padding: 10px;" alignment="TOP_CENTER" HBox.hgrow="ALWAYS" >
 
-        <Button onAction="#start">Click</Button>
+        <Button onAction="#start" styleClass="button">Iniciar</Button>
+        <VBox>
+<!--            creamos el contendor para el procesador-->
         <VBox alignment="TOP_CENTER">
-           <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Procesador</Label>
+           <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Cocinero</Label>
             <VBox fx:id="proc" styleClass="border" alignment="TOP_CENTER">
 
-                <Label styleClass="custom-label">Proceso 1</Label>
-                <Label styleClass="custom-label">Proceso 2</Label>
-                <Label styleClass="custom-label">Proceso 3</Label>
-                <Label styleClass="custom-label">Proceso 4</Label>
-                <Label styleClass="custom-label">Proceso 5</Label>
-                <Label styleClass="custom-label">Proceso 6</Label>
+                <Label styleClass="custom-label-u">UberEats 1</Label>
+                <Label styleClass="custom-label-u">UberEats 2</Label>
+                <Label styleClass="custom-label-u">UberEats 3</Label>
+                <Label styleClass="custom-label-r">Rappi... 1</Label>
+                <Label styleClass="custom-label-r">Rappi... 2</Label>
+                <Label styleClass="custom-label-r">Rappi... 3</Label>
+            </VBox>
+
+<!--            contendor para la ram-->
+        </VBox>
+            <VBox alignment="TOP_CENTER">
+                <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Ayudante</Label>
+                <VBox fx:id="cache" styleClass="border" alignment="TOP_CENTER">
+                    <Label styleClass="custom-label-u">UberEats 4</Label>
+                    <Label styleClass="custom-label-u">UberEats 5</Label>
+                    <Label styleClass="custom-label-r">Rappi... 4</Label>
+                    <!--  <Label styleClass="custom-label">Proceso 4</Label>
+                      <Label styleClass="custom-label">Proceso 5</Label>
+                      <Label styleClass="custom-label">Proceso 6</Label>-->
+
+                </VBox>
             </VBox>
         </VBox>
+
+<!--        contenedor para el cache-->
         <VBox alignment="TOP_CENTER">
-        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria RAM</Label>
+        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Mesero</Label>
             <VBox fx:id="ram" styleClass="border" alignment="TOP_CENTER" >
-                <Label styleClass="custom-label">Proceso 1</Label>
-                <Label styleClass="custom-label">Proceso 2</Label>
-                <Label styleClass="custom-label">Proceso 3</Label>
-                <Label styleClass="custom-label">Proceso 4</Label>
-                <Label styleClass="custom-label">Proceso 5</Label>
-                <Label styleClass="custom-label">Proceso 6</Label>
+                <Label styleClass="custom-label-u">UberEats 1</Label>
+                <Label styleClass="custom-label-u">UberEats 2</Label>
+                <Label styleClass="custom-label-u">UberEats 3</Label>
+                <Label styleClass="custom-label-r">Rappi... 1</Label>
+                <Label styleClass="custom-label-r">Rappi... 2</Label>
+                <Label styleClass="custom-label-r">Rappi... 3</Label>
 
             </VBox>
         </VBox>
-        <VBox alignment="TOP_CENTER">
-        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria Cache</Label>
-            <VBox fx:id="cache" styleClass="border" alignment="TOP_CENTER">
-                <Label styleClass="custom-label">Proceso 1</Label>
-                <Label styleClass="custom-label">Proceso 2</Label>
-                <Label styleClass="custom-label">Proceso 3</Label>
-                <Label styleClass="custom-label">Proceso 4</Label>
-                <Label styleClass="custom-label">Proceso 5</Label>
-                <Label styleClass="custom-label">Proceso 6</Label>
 
-            </VBox>
-        </VBox>
     </HBox>
+
+<!--    contenedor para la memoria virtual-->
     <VBox GridPane.columnIndex="1" fx:id="container2" styleClass="border" alignment="TOP_CENTER" style="-fx-background-color: #ff7477; -fx-padding: 10px;">
-        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Memoria Virtual</Label>
+        <Label style="-fx-text-fill: black; -fx-font-family: Monospaced;">Platillos banquete</Label>
        <FlowPane hgap="5" vgap="5" VBox.vgrow="ALWAYS" fx:id="virtual">
-           <Label styleClass="custom-label">Proceso 1</Label>
-           <Label styleClass="custom-label">Proceso 2</Label>
-           <Label styleClass="custom-label">Proceso 3</Label>
-           <Label styleClass="custom-label">Proceso 4</Label>
-           <Label styleClass="custom-label">Proceso 5</Label>
-           <Label styleClass="custom-label">Proceso 6</Label>
-           <Label styleClass="custom-label">Proceso 7</Label>
-           <Label styleClass="custom-label">Proceso 8</Label>
-           <Label styleClass="custom-label">Proceso 9</Label>
-           <Label styleClass="custom-label">Proces 10</Label>
-           <Label styleClass="custom-label">Proces 11</Label>
-           <Label styleClass="custom-label">Proces 12</Label>
-           <Label styleClass="custom-label">Proces 13</Label>
-           <Label styleClass="custom-label">Proces 14</Label>
-           <Label styleClass="custom-label">Proces 15</Label>
+           <Label styleClass="custom-label">Banquete 1</Label>
+           <Label styleClass="custom-label">Banquete 2</Label>
+           <Label styleClass="custom-label">Banquete 3</Label>
+           <Label styleClass="custom-label">Banquete 4</Label>
+           <Label styleClass="custom-label">Banquete 5</Label>
+           <Label styleClass="custom-label">Banquete 6</Label>
+           <Label styleClass="custom-label">Banquete 7</Label>
+           <Label styleClass="custom-label">Banqute 8</Label>
+           <Label styleClass="custom-label">Banquete 9</Label>
+           <Label styleClass="custom-label">Banquet 10</Label>
+           <Label styleClass="custom-label">Banquet 11</Label>
+           <Label styleClass="custom-label">Banquet 12</Label>
+           <Label styleClass="custom-label">Banquet 13</Label>
+           <Label styleClass="custom-label">Banquet 14</Label>
+           <Label styleClass="custom-label">Banquet 15</Label>
        </FlowPane>
     </VBox>
 

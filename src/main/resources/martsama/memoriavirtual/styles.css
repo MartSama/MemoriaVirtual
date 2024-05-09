@@ -5,9 +5,30 @@
     -fx-padding: 5px; /* Padding */
     -fx-background-color: #809bce;
 }
-
+.custom-label-u {
+    -fx-border-color: black; /* Border color */
+    -fx-border-width: 0 0 1px 0; /* Border width */
+    -fx-font-family: Monospaced;
+    -fx-padding: 5px; /* Padding */
+    -fx-background-color: rgb(173,216,230);
+}
+.custom-label-r {
+     -fx-border-color: black; /* Border color */
+     -fx-border-width: 0 0 1px 0; /* Border width */
+     -fx-font-family: Monospaced;
+     -fx-padding: 5px; /* Padding */
+     -fx-background-color: rgb(255,187,130);
+ }
 .border{
 -fx-border-color: black;
     -fx-border-width: 2px;
     -fx-padding: 5px; /* Padding */
+}
+
+.button{
+    -fx-border-color: black;
+    -fx-border=width: 2px;
+    -fx-padding: 2px 5px;
+    -fx-background-color: gold;
+    -fx-border-radius: 10px;
 }
